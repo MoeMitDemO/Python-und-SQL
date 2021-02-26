@@ -3,13 +3,14 @@ from sqlite3 import Error
 from mysql.connector import Error
 
 
-def create_connection(host_name, user_name, user_password):
+def create_connection(host_name, user_name, user_password, db_name):
     connection = None
     try:
         connection = mysql.connector.connect(
             host=host_name,
             user=user_name,
-            passwd=user_password
+            passwd=user_password,
+            database=db_name
         )
         print("Connection to MySQL DB successful")
     except Error as e:
@@ -25,8 +26,6 @@ def create_database(connection, query):
     except Error as e:
         print(f"The error '{e}' occurred")
 
-connection = create_connection("localhost", "root", "")
+connection = create_connection("localhost", "root", "", "python-test")
 
-create_database_query = "CREATE DATABASE sm_app"
-create_database(connection, create_database_query)
 

@@ -28,10 +28,11 @@ def selectDestination():
         window.zielLineEdit.setText(fileName)
 
 def convert():
+    print(window.zielLineEdit.text())
     input_file =  window.quelleLineEdit.text()
     #give your file name with valid path 
     # output_file = window.zielLineEdit.text()
-    output_file = r'C:\Users\Moe\Desktop\test.pdf'
+    output_file = window.zielLineEdit.text()
     #give valid output file name and path
     app1 = client.DispatchEx("Excel.Application")
     app1.Interactive = False
@@ -43,8 +44,8 @@ def convert():
         print("Failed to convert in PDF format.Please confirm environment meets all the requirements  and try again")
         print(str(e))
     finally:
-        Workbook.Close()
-        excel.app1.Exit()
+        Workbook.Close(True)
+
 
 app = QtWidgets.QApplication(sys.argv)              # Erzeuge eine Instanz von QtWidgets.QApplication
 window = Ui()                                       # Erzeuge eine Instanz unserer Klasse (Ui)

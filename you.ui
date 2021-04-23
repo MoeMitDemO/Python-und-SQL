@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Super Duper Ultra Cooler PDF Konverter</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../../../Pictures/87ac5df5-ff22-430e-8b94-6125787c46c3.gif</normaloff>../../../../Pictures/87ac5df5-ff22-430e-8b94-6125787c46c3.gif</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label_2">
